@@ -29,12 +29,17 @@ public class PanelArbol extends javax.swing.JPanel {
 
         jTree1 = new javax.swing.JTree();
 
-        setMaximumSize(new java.awt.Dimension(240, 690));
-        setMinimumSize(new java.awt.Dimension(240, 690));
-        setPreferredSize(new java.awt.Dimension(240, 690));
+        setMaximumSize(new java.awt.Dimension(230, 670));
+        setMinimumSize(new java.awt.Dimension(230, 670));
+        setPreferredSize(new java.awt.Dimension(230, 670));
         setLayout(null);
+
+        jTree1.setAlignmentX(0.0F);
+        jTree1.setAlignmentY(0.0F);
+        jTree1.setMaximumSize(new java.awt.Dimension(230, 670));
+        jTree1.setMinimumSize(new java.awt.Dimension(230, 670));
         add(jTree1);
-        jTree1.setBounds(0, 0, 240, 690);
+        jTree1.setBounds(0, 0, 240, 700);
     }// </editor-fold>//GEN-END:initComponents
 
 

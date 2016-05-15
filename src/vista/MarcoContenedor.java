@@ -16,8 +16,7 @@ import javax.swing.ImageIcon;
  * @author Ariel
  */
 public class MarcoContenedor extends javax.swing.JFrame {
-    private PanelProveedor panelProveedor;
-    private PanelPersona panelPersona;
+  
     private PanelArbol panelArbol;
     /**
      * Creates new form MarcoContenedor
@@ -60,7 +59,6 @@ public class MarcoContenedor extends javax.swing.JFrame {
         jpContenedor = new javax.swing.JPanel();
         panelArbol= new PanelArbol();
         jpArbol = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jmiSuma = new javax.swing.JMenuItem();
@@ -75,22 +73,23 @@ public class MarcoContenedor extends javax.swing.JFrame {
         setName("Principal"); // NOI18N
         setPreferredSize(new java.awt.Dimension(1024, 768));
         setResizable(false);
-        getContentPane().setLayout(new java.awt.BorderLayout());
 
-        jpPrincipal.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jpPrincipal.setMaximumSize(new java.awt.Dimension(1024, 768));
-        jpPrincipal.setMinimumSize(new java.awt.Dimension(1024, 768));
+        jpPrincipal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpPrincipal.setMaximumSize(new java.awt.Dimension(1043, 770));
+        jpPrincipal.setMinimumSize(new java.awt.Dimension(1043, 770));
+        jpPrincipal.setPreferredSize(new java.awt.Dimension(1043, 770));
 
-        jpContenedor.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jpContenedor.setMaximumSize(new java.awt.Dimension(768, 768));
-        jpContenedor.setMinimumSize(new java.awt.Dimension(768, 768));
-        jpContenedor.setPreferredSize(new java.awt.Dimension(768, 768));
+        jpContenedor.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpContenedor.setMaximumSize(new java.awt.Dimension(740, 740));
+        jpContenedor.setMinimumSize(new java.awt.Dimension(740, 740));
+        jpContenedor.setPreferredSize(new java.awt.Dimension(740, 740));
         jpContenedor.setLayout(new java.awt.CardLayout());
 
-        jpArbol.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
-        jpArbol.setMaximumSize(new java.awt.Dimension(250, 700));
-        jpArbol.setMinimumSize(new java.awt.Dimension(250, 700));
-        jpArbol.setPreferredSize(new java.awt.Dimension(250, 700));
+        jpArbol.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpArbol.setMaximumSize(new java.awt.Dimension(240, 700));
+        jpArbol.setMinimumSize(new java.awt.Dimension(240, 700));
+        jpArbol.setPreferredSize(new java.awt.Dimension(240, 700));
+        jpArbol.setRequestFocusEnabled(false);
         jpArbol.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -102,20 +101,6 @@ public class MarcoContenedor extends javax.swing.JFrame {
         });
         jpArbol.setLayout(null);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jpArbol.add(jPanel1);
-        jPanel1.setBounds(10, 10, 100, 100);
-
         jpArbol.add(panelArbol);
         repaint();
 
@@ -126,18 +111,18 @@ public class MarcoContenedor extends javax.swing.JFrame {
             .addGroup(jpPrincipalLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(jpArbol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jpContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jpPrincipalLayout.setVerticalGroup(
             jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPrincipalLayout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jpContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jpArbol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(55, 55, 55))
         );
 
         getContentPane().add(jpPrincipal, java.awt.BorderLayout.CENTER);
@@ -167,7 +152,7 @@ public class MarcoContenedor extends javax.swing.JFrame {
 
     private void jpArbolAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jpArbolAncestorAdded
        panelArbol = new PanelArbol();
-       panelArbol.setSize(250, 700);
+       panelArbol.setSize(230, 690);
        panelArbol.setLocation(6, 6);
        
        jpArbol.removeAll();;
@@ -186,7 +171,6 @@ public class MarcoContenedor extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem jmiResta;
     private javax.swing.JMenuItem jmiSuma;
     public static javax.swing.JPanel jpArbol;
