@@ -84,7 +84,7 @@ public class MarcoContenedor extends javax.swing.JFrame{
         jpContenedor.setMaximumSize(new java.awt.Dimension(740, 740));
         jpContenedor.setMinimumSize(new java.awt.Dimension(740, 740));
         jpContenedor.setPreferredSize(new java.awt.Dimension(740, 740));
-        jpContenedor.setLayout(new java.awt.CardLayout());
+        jpContenedor.setLayout(null);
 
         jpArbol.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jpArbol.setMaximumSize(new java.awt.Dimension(240, 700));
