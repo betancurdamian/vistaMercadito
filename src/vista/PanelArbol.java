@@ -5,17 +5,30 @@
  */
 package vista;
 
+import com.l2fprod.util.StringUtils;
+import java.awt.BorderLayout;
+import javax.swing.tree.TreePath;
+import static vista.MarcoContenedor.jpContenedor;
+
 /**
  *
  * @author Ariel
  */
-public class PanelArbol extends javax.swing.JPanel {
+public class PanelArbol extends javax.swing.JPanel{
 
     /**
      * Creates new form PanelArbol
      */
+    String captura=null;    
+    private PanelStock panelStock;
+    
+    
     public PanelArbol() {
+        
+       
+        
         initComponents();
+        
     }
 
     /**
@@ -27,23 +40,155 @@ public class PanelArbol extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTree1 = new javax.swing.JTree();
+        arbolModulos = new javax.swing.JTree();
 
         setMaximumSize(new java.awt.Dimension(230, 670));
         setMinimumSize(new java.awt.Dimension(230, 670));
         setPreferredSize(new java.awt.Dimension(230, 670));
         setLayout(null);
 
-        jTree1.setAlignmentX(0.0F);
-        jTree1.setAlignmentY(0.0F);
-        jTree1.setMaximumSize(new java.awt.Dimension(230, 670));
-        jTree1.setMinimumSize(new java.awt.Dimension(230, 670));
-        add(jTree1);
-        jTree1.setBounds(0, 0, 240, 700);
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("El Mercadito");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Administración General");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Empresa");
+        javax.swing.tree.DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Puesto de Trabajo");
+        treeNode3.add(treeNode4);
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Sucursal");
+        treeNode3.add(treeNode4);
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Seguridad");
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Usuarios");
+        treeNode3.add(treeNode4);
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Grupo de Usuarios");
+        treeNode3.add(treeNode4);
+        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Autorizaciones");
+        treeNode3.add(treeNode4);
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Informes");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Articulos");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tablas Relativas a Articulos");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Articulos");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Lista de Precios");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Stock");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Depositos");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Sectores");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Ingreso de Movimientos");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Consulta y Baja de Movimientos");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Informes");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Compras");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Proveedores");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Ingreso de Comprobantes");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Consulta y Baja de Comprobantes");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Informes");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Trensferencias");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Deposito");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Ingreso de Comprobantes");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Consulta y Baja de Comprobantes");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Informes");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Ventas");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Vendedores");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Clientes");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Descuentos y Rangos Varios");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Fecha de Facturación");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Definición para el ingreso de comprobantes");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Ingreso de Comprobantes");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Consulta y Baja de Comprobantes");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Anulación de Comprobantes");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Informes");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Cuentas a Cobrar");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Cobranzas");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Ingreso de Saldos Iniciales");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Consulta y Baja de Comprobantes");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Informes");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Cuentas a Pagar");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Pagos");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Consulta y Baja de Comprobantes");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Informes");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        arbolModulos.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        arbolModulos.setAlignmentX(0.0F);
+        arbolModulos.setAlignmentY(0.0F);
+        arbolModulos.setMaximumSize(new java.awt.Dimension(230, 670));
+        arbolModulos.setMinimumSize(new java.awt.Dimension(230, 670));
+        arbolModulos.setName(""); // NOI18N
+        arbolModulos.setPreferredSize(new java.awt.Dimension(230, 670));
+        arbolModulos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                arbolModulosMouseClicked(evt);
+            }
+        });
+        add(arbolModulos);
+        arbolModulos.setBounds(0, 0, 230, 700);
     }// </editor-fold>//GEN-END:initComponents
 
 
+
+    private void arbolModulosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_arbolModulosMouseClicked
+       
+       
+       TreePath tp = arbolModulos.getPathForLocation(evt.getX(), evt.getY());
+       if (tp != null){
+            captura = arbolModulos.getSelectionPath().toString();
+            /*Intentanmos validar si la cadena equivale a vacio.
+              Si ejecutamos nos daremos cuenta que esto
+             genera una excepciòn ya que la cadena es nula*/
+
+            if(captura.equals("[El Mercadito, Trensferencias, Deposito]")){               
+            panelStock = new PanelStock();
+            panelStock.setSize(730, 690);
+            panelStock.setLocation(6, 6);
+
+            jpContenedor.removeAll();
+            jpContenedor.add(panelStock, BorderLayout.NORTH);
+            jpContenedor.repaint();
+            }
+       }
+    }//GEN-LAST:event_arbolModulosMouseClicked
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTree jTree1;
+    private javax.swing.JTree arbolModulos;
     // End of variables declaration//GEN-END:variables
+
+   
+
 }
