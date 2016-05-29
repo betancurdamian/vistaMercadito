@@ -46,7 +46,7 @@ public class PanelContenedor extends javax.swing.JPanel{
 
         jlblNombre.setText("Nombre:");
         add(jlblNombre);
-        jlblNombre.setBounds(253, 96, 41, 14);
+        jlblNombre.setBounds(40, 30, 41, 14);
 
         jtfNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -54,13 +54,13 @@ public class PanelContenedor extends javax.swing.JPanel{
             }
         });
         add(jtfNombre);
-        jtfNombre.setBounds(298, 93, 99, 20);
+        jtfNombre.setBounds(90, 30, 99, 20);
 
         jlblApellido2.setText("Apellido:");
         add(jlblApellido2);
-        jlblApellido2.setBounds(253, 134, 41, 14);
+        jlblApellido2.setBounds(40, 70, 41, 14);
         add(jtfApellido);
-        jtfApellido.setBounds(298, 131, 99, 20);
+        jtfApellido.setBounds(90, 70, 99, 20);
 
         getAccessibleContext().setAccessibleName("PanelContenedor");
     }// </editor-fold>//GEN-END:initComponents
