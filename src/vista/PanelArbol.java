@@ -25,7 +25,7 @@ public class PanelArbol extends javax.swing.JPanel{
     
     public PanelArbol() {
         
-       
+        
         
         initComponents();
         

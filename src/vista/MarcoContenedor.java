@@ -7,8 +7,10 @@ package vista;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Image;
+import java.awt.ScrollPane;
 import javax.swing.ImageIcon;
 
 /**
@@ -18,7 +20,9 @@ import javax.swing.ImageIcon;
 public class MarcoContenedor extends javax.swing.JFrame{
   
     private PanelArbol panelArbol;
+    
     private PanelContenedor panelContenedor;
+    private ScrollPane srollContenedor;
     /**
      * Creates new form MarcoContenedor
      */
@@ -58,7 +62,7 @@ public class MarcoContenedor extends javax.swing.JFrame{
         jMenuItem1 = new javax.swing.JMenuItem();
         jpPrincipal = new javax.swing.JPanel();
         jpContenedor = new javax.swing.JPanel();
-        panelArbol= new PanelArbol();
+        PanelArbol panelArbol= new PanelArbol();
         jpArbol = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -87,7 +91,7 @@ public class MarcoContenedor extends javax.swing.JFrame{
         jpContenedor.setLayout(null);
 
         jpArbol.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jpArbol.setMaximumSize(new java.awt.Dimension(240, 700));
+        jpArbol.setMaximumSize(new java.awt.Dimension(240, 800));
         jpArbol.setMinimumSize(new java.awt.Dimension(240, 700));
         jpArbol.setPreferredSize(new java.awt.Dimension(240, 700));
         jpArbol.setRequestFocusEnabled(false);
@@ -115,20 +119,26 @@ public class MarcoContenedor extends javax.swing.JFrame{
         jpPrincipalLayout.setHorizontalGroup(
             jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpPrincipalLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jpArbol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(256, 256, 256)
                 .addComponent(jpContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jpArbol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(789, Short.MAX_VALUE)))
         );
         jpPrincipalLayout.setVerticalGroup(
             jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPrincipalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jpArbol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(55, 55, 55))
+                .addContainerGap()
+                .addComponent(jpContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
+            .addGroup(jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jpArbol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(55, Short.MAX_VALUE)))
         );
 
         getContentPane().add(jpPrincipal, java.awt.BorderLayout.CENTER);
@@ -157,11 +167,14 @@ public class MarcoContenedor extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jpArbolAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jpArbolAncestorAdded
+              
        panelArbol = new PanelArbol();
        panelArbol.setSize(230, 690);
        panelArbol.setLocation(6, 6);
+ 
+
        
-       jpArbol.removeAll();;
+       jpArbol.removeAll();
        jpArbol.add(panelArbol, BorderLayout.NORTH);
        jpArbol.repaint();
        
