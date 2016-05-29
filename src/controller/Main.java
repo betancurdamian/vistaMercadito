@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mercaditovista;
+package controller;
 
 import com.l2fprod.gui.plaf.skin.SkinLookAndFeel;
 import javax.swing.JFrame;
@@ -16,7 +16,7 @@ import vista.MarcoContenedor;
  *
  * @author Ariel
  */
-public class MercaditoVista {
+public class Main {
 
      /**
      * @param args the command line arguments
