@@ -15,9 +15,10 @@ import javax.swing.ImageIcon;
  *
  * @author Ariel
  */
-public class MarcoContenedor extends javax.swing.JFrame {
+public class MarcoContenedor extends javax.swing.JFrame{
   
     private PanelArbol panelArbol;
+    private PanelContenedor panelContenedor;
     /**
      * Creates new form MarcoContenedor
      */
@@ -99,6 +100,11 @@ public class MarcoContenedor extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
+        jpArbol.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jpArbolPropertyChange(evt);
+            }
+        });
         jpArbol.setLayout(null);
 
         jpArbol.add(panelArbol);
@@ -118,7 +124,7 @@ public class MarcoContenedor extends javax.swing.JFrame {
         jpPrincipalLayout.setVerticalGroup(
             jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPrincipalLayout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jpContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jpArbol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -158,7 +164,21 @@ public class MarcoContenedor extends javax.swing.JFrame {
        jpArbol.removeAll();;
        jpArbol.add(panelArbol, BorderLayout.NORTH);
        jpArbol.repaint();
+       
+       panelContenedor = new PanelContenedor();
+       panelContenedor.setSize(730, 690);
+       panelContenedor.setLocation(6, 6);
+       
+       
+       jpContenedor.add(panelContenedor, BorderLayout.NORTH);
+       jpContenedor.repaint();
+       
     }//GEN-LAST:event_jpArbolAncestorAdded
+
+    private void jpArbolPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jpArbolPropertyChange
+        jpContenedor.repaint();
+        jpArbol.repaint();
+    }//GEN-LAST:event_jpArbolPropertyChange
 
    
     
@@ -177,4 +197,6 @@ public class MarcoContenedor extends javax.swing.JFrame {
     public static javax.swing.JPanel jpContenedor;
     private javax.swing.JPanel jpPrincipal;
     // End of variables declaration//GEN-END:variables
+
+   
 }
